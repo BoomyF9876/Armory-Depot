@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import type { Listing } from "../types";
+import { resolveImageUrl } from "../api/client";
 import { formatCredits } from "../utils/formatPrice";
 
 interface ListingModalProps {
@@ -28,6 +29,13 @@ export function ListingModal({ listing, onClose }: ListingModalProps) {
         <button className="listing-modal-close" onClick={onClose} aria-label="Close">
           ×
         </button>
+        {listing.image_url && (
+          <img
+            className="listing-modal-img"
+            src={resolveImageUrl(listing.image_url)}
+            alt={listing.title}
+          />
+        )}
         <h2 id="listing-modal-title">{listing.title}</h2>
         <p className="listing-modal-price">{formatCredits(listing.price)} credits</p>
         <p className="listing-modal-seller">Sold by {listing.seller.display_name}</p>

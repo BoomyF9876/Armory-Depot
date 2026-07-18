@@ -13,4 +13,5 @@ export interface Listing {
   status: "active" | "sold" | "removed";
   seller_id: number;
   seller: Pick<User, "id" | "display_name">;
+  image_url: string | null;
 }
