@@ -1,0 +1,157 @@
+.listings-page {
+  padding: 24px 28px 32px;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+.listings-page-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.listings-page-title {
+  font-size: 26px;
+  margin: 0;
+}
+
+.listings-page-count {
+  font-size: 14px;
+  color: var(--text);
+}
+
+.listings-page-status {
+  color: var(--text);
+}
+
+.listing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.listing-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0;
+  overflow: hidden;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+  text-align: left;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.listing-card:hover,
+.listing-card:focus-visible {
+  box-shadow: var(--shadow);
+  transform: translateY(-2px);
+  outline: none;
+}
+
+.listing-card-thumb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 96px;
+  background: var(--accent-bg);
+  color: var(--accent);
+  font-size: 36px;
+  font-weight: 600;
+}
+
+.listing-card-body {
+  padding: 16px;
+}
+
+.listing-card-title {
+  margin: 0 0 8px;
+  font-size: 17px;
+  color: var(--text-h);
+}
+
+.listing-card-price {
+  margin: 0 0 4px;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.listing-card-seller {
+  margin: 0;
+  font-size: 14px;
+  color: var(--text);
+}
+
+.listing-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+  z-index: 100;
+}
+
+.listing-modal {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  max-height: 90vh;
+  overflow-y: auto;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  padding: 32px;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+.listing-modal-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: transparent;
+  color: var(--text);
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.listing-modal-close:hover,
+.listing-modal-close:focus-visible {
+  background: var(--code-bg);
+  outline: none;
+}
+
+.listing-modal-price {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--accent);
+  margin: 8px 0;
+}
+
+.listing-modal-seller,
+.listing-modal-status {
+  margin: 4px 0;
+  color: var(--text);
+  font-size: 15px;
+}
+
+.listing-modal-description {
+  margin-top: 16px;
+  color: var(--text);
+  line-height: 150%;
+}

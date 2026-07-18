@@ -12,4 +12,5 @@ export interface Listing {
   price: string;
   status: "active" | "sold" | "removed";
   seller_id: number;
+  seller: Pick<User, "id" | "display_name">;
 }

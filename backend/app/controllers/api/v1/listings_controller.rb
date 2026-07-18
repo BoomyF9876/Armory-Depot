@@ -2,7 +2,8 @@ class Api::V1::ListingsController < ApplicationController
   before_action :set_listing, only: [:show, :update, :destroy]
 
   def index
-    render json: Listing.where(status: "active").includes(:seller)
+    listings = Listing.where(status: "active").includes(:seller)
+    render json: listings.as_json(include: { seller: { only: [:id, :display_name] } })
   end
 
   def show
