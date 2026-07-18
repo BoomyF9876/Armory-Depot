@@ -1,4 +1,5 @@
 import type { Listing } from "../types";
+import { formatCredits } from "../utils/formatPrice";
 
 interface ListingCardProps {
   listing: Listing;
@@ -13,7 +14,7 @@ export function ListingCard({ listing, onSelect }: ListingCardProps) {
       </div>
       <div className="listing-card-body">
         <h3 className="listing-card-title">{listing.title}</h3>
-        <p className="listing-card-price">{listing.price} credits</p>
+        <p className="listing-card-price">{formatCredits(listing.price, { compact: true })} credits</p>
         <p className="listing-card-seller">Seller: {listing.seller.display_name}</p>
       </div>
     </button>

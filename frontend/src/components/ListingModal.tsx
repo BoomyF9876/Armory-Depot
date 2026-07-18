@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import type { Listing } from "../types";
+import { formatCredits } from "../utils/formatPrice";
 
 interface ListingModalProps {
   listing: Listing;
@@ -28,7 +29,7 @@ export function ListingModal({ listing, onClose }: ListingModalProps) {
           ×
         </button>
         <h2 id="listing-modal-title">{listing.title}</h2>
-        <p className="listing-modal-price">{listing.price} credits</p>
+        <p className="listing-modal-price">{formatCredits(listing.price)} credits</p>
         <p className="listing-modal-seller">Sold by {listing.seller.display_name}</p>
         <p className="listing-modal-status">Status: {listing.status}</p>
         <p className="listing-modal-description">

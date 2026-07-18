@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_07_18_000910) do
+ActiveRecord::Schema[8.1].define(version: 2026_07_18_173410) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
   create_table "listings", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.text "description"
-    t.decimal "price", precision: 10, scale: 2, null: false
+    t.decimal "price", precision: 16, scale: 2, null: false
     t.bigint "seller_id", null: false
     t.string "status", default: "active", null: false
     t.string "title"
@@ -29,7 +29,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_07_18_000910) do
     t.bigint "buyer_id", null: false
     t.datetime "created_at", null: false
     t.bigint "listing_id", null: false
-    t.decimal "price_paid", precision: 10, scale: 2, null: false
+    t.decimal "price_paid", precision: 16, scale: 2, null: false
     t.string "status", default: "pending", null: false
     t.datetime "updated_at", null: false
     t.index ["buyer_id"], name: "index_orders_on_buyer_id"
